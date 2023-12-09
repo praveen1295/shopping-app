@@ -7,15 +7,18 @@ import Search from "./tabs/Search";
 import Wishlist from "./tabs/Wishlist";
 import Notification from "./tabs/Notification";
 import User from "./tabs/User";
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <View style={styles.container}>
-      <Header
+      {/* <Header
         leftIcon={require("../images/menu1.png")}
         rightIcon={require("../images/cart.png")}
         title={"Groceru App"}
-      />
+        onclickLeftIcon={() => {
+          navigation.openDrawer();
+        }}
+      /> */}
       {selectedTab === 0 ? (
         <Home />
       ) : selectedTab === 1 ? (
@@ -34,7 +37,11 @@ const HomeScreen = () => {
           onPress={() => setSelectedTab(0)}
         >
           <Image
-            source={require("../images/home.png")}
+            source={
+              selectedTab === 0
+                ? require("../images/homeFill.png")
+                : require("../images/home.png")
+            }
             style={styles.bottomTabIcon}
           />
         </TouchableOpacity>
@@ -43,7 +50,11 @@ const HomeScreen = () => {
           onPress={() => setSelectedTab(1)}
         >
           <Image
-            source={require("../images/search.png")}
+            source={
+              selectedTab === 1
+                ? require("../images/searchFill.png")
+                : require("../images/search.png")
+            }
             style={styles.bottomTabIcon}
           />
         </TouchableOpacity>
@@ -52,7 +63,11 @@ const HomeScreen = () => {
           onPress={() => setSelectedTab(2)}
         >
           <Image
-            source={require("../images/love.png")}
+            source={
+              selectedTab === 2
+                ? require("../images/loveFill.png")
+                : require("../images/love.png")
+            }
             style={styles.bottomTabIcon}
           />
         </TouchableOpacity>
@@ -61,7 +76,11 @@ const HomeScreen = () => {
           onPress={() => setSelectedTab(3)}
         >
           <Image
-            source={require("../images/notification.png")}
+            source={
+              selectedTab === 3
+                ? require("../images/notificationFill.png")
+                : require("../images/notification.png")
+            }
             style={styles.bottomTabIcon}
           />
         </TouchableOpacity>
@@ -70,7 +89,11 @@ const HomeScreen = () => {
           onPress={() => setSelectedTab(4)}
         >
           <Image
-            source={require("../images/user.png")}
+            source={
+              selectedTab === 4
+                ? require("../images/userFill.png")
+                : require("../images/user.png")
+            }
             style={styles.bottomTabIcon}
           />
         </TouchableOpacity>
