@@ -4,13 +4,12 @@ import {
   Image,
   StyleSheet,
   Dimensions,
-  Touchable,
+  TouchableOpacity,
+  FlatList,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { FlatList } from "react-native-gesture-handler";
 import Header from "../../common/Header";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native-web";
 const Home = ({}) => {
   const navigation = useNavigation();
   const [products, setProducts] = useState([]);

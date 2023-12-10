@@ -1,6 +1,12 @@
-import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import React, { useEffect, useState } from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const { height, width } = Dimensions.get("window");
 const Header = ({
